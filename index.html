@@ -1,1 +1,406 @@
-test
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타트업 - 모던 & 스마트 솔루션</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Inter & Noto Sans KR) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center gap-2 text-2xl font-black text-brand-600 tracking-tight">
+                        <i class="fa-solid fa-cube text-brand-500"></i>
+                        <span>MODERN<span class="text-slate-900">LAB</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#hero" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">홈</a>
+                    <a href="#features" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">주요 기능</a>
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">소개</a>
+                    <a href="#contact" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">문의하기</a>
+                    <a href="#contact" class="bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 py-2 rounded-xl shadow-sm transition-all duration-200 transform hover:-translate-y-0.5">
+                        시작하기
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-lg" aria-label="메뉴 열기">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 shadow-lg transition-all" id="mobile-menu">
+            <div class="flex flex-col space-y-3 pt-2">
+                <a href="#hero" class="mobile-link text-slate-700 hover:text-brand-600 font-medium px-3 py-2 rounded-lg hover:bg-slate-50">홈</a>
+                <a href="#features" class="mobile-link text-slate-700 hover:text-brand-600 font-medium px-3 py-2 rounded-lg hover:bg-slate-50">주요 기능</a>
+                <a href="#about" class="mobile-link text-slate-700 hover:text-brand-600 font-medium px-3 py-2 rounded-lg hover:bg-slate-50">소개</a>
+                <a href="#contact" class="mobile-link text-slate-700 hover:text-brand-600 font-medium px-3 py-2 rounded-lg hover:bg-slate-50">문의하기</a>
+                <a href="#contact" class="mobile-link bg-brand-600 text-white text-center font-medium px-4 py-2.5 rounded-xl shadow-sm mt-2">
+                    시작하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-brand-50/50 via-slate-50 to-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column Text -->
+                    <div class="text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-100/70 text-brand-700 px-3 py-1.5 rounded-full text-sm font-semibold">
+                            <span class="flex h-2 w-2 rounded-full bg-brand-600 animate-ping"></span>
+                            차세대 비즈니스 플랫폼 출시
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                            더 스마트하게,<br class="hidden sm:block">
+                            <span class="text-brand-600">아이디어를 현실로</span> 만드세요.
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            복잡한 프로세스를 단 몇 분 만에 자동화하고 팀의 생산성을 극대화할 수 있는 강력하고 현대적인 플랫폼을 경험해 보세요.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#contact" class="w-full sm:w-auto text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                                무료로 시작하기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#features" class="w-full sm:w-auto text-center bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-xl shadow-sm transition-all">
+                                기능 둘러보기
+                            </a>
+                        </div>
+                        <div class="pt-6 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-emerald-500"></i> 신용카드 불필요
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-emerald-500"></i> 14일 무료 체험
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column Visual Card -->
+                    <div class="relative mx-auto max-w-md lg:max-w-none w-full">
+                        <div class="relative bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 sm:p-8 space-y-6">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-chart-line text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-slate-800">성능 분석 리포트</h3>
+                                        <p class="text-xs text-slate-400">실시간 데이터 동기화 완료</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-md">+24.5%</span>
+                            </div>
+                            
+                            <!-- Placeholder Data Visualization Graphics -->
+                            <div class="space-y-4">
+                                <div class="space-y-2">
+                                    <div class="flex justify-between text-xs font-semibold text-slate-500">
+                                        <span>프로젝트 달성도</span>
+                                        <span>88%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                                        <div class="bg-brand-600 h-full rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4 pt-2">
+                                    <div class="bg-slate-50 p-4 rounded-xl">
+                                        <p class="text-xs text-slate-500">신규 사용자</p>
+                                        <p class="text-xl font-bold text-slate-800 mt-1">1,280명</p>
+                                    </div>
+                                    <div class="bg-slate-50 p-4 rounded-xl">
+                                        <p class="text-xs text-slate-500">평균 응답 시간</p>
+                                        <p class="text-xl font-bold text-slate-800 mt-1">1.2초</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between text-sm">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-shield-halved text-brand-400 text-lg"></i>
+                                    <span>보안 등급: <strong>최고 안전</strong></span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Services Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest">WHY CHOOSE US</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">비즈니스 성장을 돕는 핵심 기능</p>
+                    <p class="text-slate-600 text-base sm:text-lg">성공적인 결과 창출에 필요한 모든 도구를 하나의 통합된 환경에서 제공합니다.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                    <!-- Feature Card 1 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">초고속 성능</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            최적화된 아키텍처로 빠른 로딩 속도와 끊김 없는 사용자 경험을 보장합니다.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">완벽한 반응형</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            모바일, 태블릿, 데스크톱 등 모든 기기에서 최적화된 화면을 자동으로 연출합니다.
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">강력한 보안</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            최신 암호화 기술과 강력한 접근 제어로 중요한 데이터와 자산을 안전하게 보호합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">ABOUT OUR COMPANY</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            혁신적인 기술로 더 나은 디지털 미래를 만들어갑니다.
+                        </h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            우리는 단순한 웹사이트 제작을 넘어, 고객의 비즈니스가 지속 가능하게 성장하도록 돕는 차세대 기술 솔루션을 탐구하고 개발합니다. 
+                        </p>
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="font-medium text-slate-700">고객 맞춤형 UI/UX 설계 지원</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="font-medium text-slate-700">24/7 모니터링 및 전문 엔지니어 기술 지원</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="font-medium text-slate-700">지속적인 소프트웨어 업데이트 및 패치 제공</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2">
+                            <p class="text-4xl font-black text-brand-600">99.9%</p>
+                            <p class="text-sm font-medium text-slate-500">서비스 가동 시간</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2">
+                            <p class="text-4xl font-black text-brand-600">500+</p>
+                            <p class="text-sm font-medium text-slate-500">글로벌 파트너사</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2">
+                            <p class="text-4xl font-black text-brand-600">10M+</p>
+                            <p class="text-sm font-medium text-slate-500">일간 트랜잭션</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center space-y-2">
+                            <p class="text-4xl font-black text-brand-600">4.9/5</p>
+                            <p class="text-sm font-medium text-slate-500">고객 만족도 점수</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-4 mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">프로젝트를 함께 시작하세요</h2>
+                    <p class="text-slate-600">궁금한 점이 있으시거나 상담이 필요하시면 언제든 메시지를 남겨주세요.</p>
+                </div>
+
+                <form id="contact-form" class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">이름</label>
+                            <input type="text" id="name" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">이메일 주소</label>
+                            <input type="email" id="email" required placeholder="example@domain.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">문의내용</label>
+                        <textarea id="message" rows="4" required placeholder="프로젝트 내용이나 궁금하신 사항을 적어주세요." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl shadow-md transition-all">
+                        메시지 보내기
+                    </button>
+                </form>
+                
+                <!-- Submission Feedback Toast Message -->
+                <div id="toast-message" class="hidden mt-4 p-4 rounded-xl bg-emerald-500 text-white font-semibold text-center transition-all">
+                    메시지가 성공적으로 전송되었습니다! 곧 연락드리겠습니다.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <span class="text-2xl font-black text-white tracking-tight">MODERN<span class="text-brand-500">LAB</span></span>
+                    <p class="text-sm">가장 단순하고 명확한 방법으로 디지털 비즈니스를 주도합니다.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">서비스</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">웹 개발</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">클라우드 솔루션</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">데이터 분석</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">회사</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">회사 소개</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">채용 정보</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">블로그</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">소셜 미디어</h4>
+                    <div class="flex space-x-4 text-lg">
+                        <a href="#" class="hover:text-white transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-white transition-colors" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-xs text-center sm:flex sm:justify-between">
+                <p>&copy; 2026 MODERNLAB Inc. All rights reserved.</p>
+                <div class="space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
+                    <a href="#" class="hover:text-white transition-colors">이용약관</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Mobile Navigation Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Simple Form Submission Handler
+        const contactForm = document.getElementById('contact-form');
+        const toastMessage = document.getElementById('toast-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show toast message
+            toastMessage.classList.remove('hidden');
+            contactForm.reset();
+
+            // Hide toast after 4 seconds
+            setTimeout(() => {
+                toastMessage.classList.add('hidden');
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
